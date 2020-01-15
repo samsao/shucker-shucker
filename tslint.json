@@ -1,0 +1,32 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "**/build/**",
+      "**/dist/**",
+      "**/public/**",
+      "**/coverage/**",
+      "node_modules/**",
+      "**/node_modules/**"
+    ]
+  },
+  "rules": {
+    // Style
+    "array-type": false,
+    "curly": false,
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-empty-interface": false,
+    "no-empty": false,
+    "max-classes-per-file": false,
+    "member-access": false,
+    "triple-equals": [true, "allow-null-check", "allow-undefined-check"]
+  },
+  "jsRules": {
+    // Style
+    "curly": false,
+    "object-literal-sort-keys": false
+  }
+}

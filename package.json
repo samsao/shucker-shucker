@@ -1,0 +1,62 @@
+{
+  "name": "test-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "moment": "^2.24.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0",
+    "rxjs": "^6.5.4",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/styled-components": "^4.4.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "rm-modules": "^1.0.2",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~3.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "clean": "yarn clean:coverage && yarn clean:node",
+    "clean:node": "rm-modules",
+    "clean:coverage": "rimraf coverage",
+    "clean:rejected": "find . -name \"*.rej\" -delete",
+    "lint": "yarn lint:ts && yarn lint:tslint && yarn lint:prettier",
+    "lint:ts": "tsc --noEmit --skipLibCheck",
+    "lint:tslint": "tslint -e '**/node_modules/**' --project tsconfig.json",
+    "lint:prettier": "prettier --check --config .prettierrc --ignore-path .prettierignore '**/*.ts?(x)'",
+    "lint:fix": "yarn run lint:tslint --fix",
+    "prettier": "prettier --write --config .prettierrc --ignore-path .prettierignore '**/*.ts?(x)'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

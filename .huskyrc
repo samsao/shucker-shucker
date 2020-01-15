@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "yarn prettier && yarn lint && yarn lint:fix && lint-staged && yarn clean:rejected",
+    "pre-push": "yarn test --bail --onlyChanged && yarn build"
+  }
+}

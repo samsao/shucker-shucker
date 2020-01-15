@@ -1,0 +1,20 @@
+# Build
+build/
+dist/
+
+## Coverage
+coverage/
+
+## Git
+.git
+.gitignore
+
+## Prettier
+.prettierignore
+
+## VSCode
+.vscode
+
+## Yarn
+package.json
+yarn.lock
