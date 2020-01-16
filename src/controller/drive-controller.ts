@@ -1,6 +1,5 @@
 import { Drive } from 'model/drive';
 import moment from 'moment';
-import { Observable } from 'rxjs';
 
 const mockedDrive: Drive = {
   affiliatesLinks: [],
@@ -25,7 +24,7 @@ const mockedDrive2: Drive = {
   id: 0,
   imageUrl:
     'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FCIkcSqqWdXU%2Fmaxresdefault.jpg&f=1&nofb=1',
-  isShuckable: false,
+  isShuckable: true,
   lastUpdated: moment(),
   lastUpdatedBy: '',
   model: 'Blah',
@@ -49,14 +48,11 @@ const mockedDrive3: Drive = {
 const mockedDrives: Drive[] = [mockedDrive, mockedDrive2, mockedDrive3];
 
 export interface DriveController {
-  fetchDrives: () => Observable<Drive[]>;
+  fetchDrives: () => Drive[];
 }
 
 export class MockDriveController implements DriveController {
-  fetchDrives = (): Observable<Drive[]> => {
-    return new Observable<Drive[]>((subscriber) => {
-      subscriber.next(mockedDrives);
-      subscriber.complete();
-    });
+  fetchDrives = (): Drive[] => {
+    return mockedDrives;
   };
 }

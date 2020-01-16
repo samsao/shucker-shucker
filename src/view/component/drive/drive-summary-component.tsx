@@ -17,7 +17,11 @@ export const DriveSummaryComponent: React.FunctionComponent<Props> = ({
   const name = `${brand}-${model}`;
 
   const getBrandName = (name: string, isShuckable: boolean): React.ReactNode =>
-    isShuckable ? <ShuckableBrandName>{name}</ShuckableBrandName> : <BrandName>{name}</BrandName>;
+    !isShuckable ? (
+      <NonShuckableBrandName>{name}</NonShuckableBrandName>
+    ) : (
+      <BrandName>{name}</BrandName>
+    );
 
   return (
     <Container>
@@ -35,6 +39,6 @@ const BrandName = styled.span`
   font-weight: bold;
 `;
 
-const ShuckableBrandName = styled(BrandName)`
+const NonShuckableBrandName = styled(BrandName)`
   color: red;
 `;
