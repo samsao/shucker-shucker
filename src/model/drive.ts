@@ -8,7 +8,6 @@ export interface Drive {
   isShuckable: boolean;
   tutorialUrl: string;
   affiliatesLinks: string[];
-
   createdBy: string;
   createdDate: Moment;
   lastUpdated: Moment;

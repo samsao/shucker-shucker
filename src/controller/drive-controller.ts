@@ -21,7 +21,7 @@ const mockedDrive2: Drive = {
   brand: 'Samsung',
   createdBy: 'Bleh',
   createdDate: moment(),
-  id: 0,
+  id: 1,
   imageUrl:
     'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FCIkcSqqWdXU%2Fmaxresdefault.jpg&f=1&nofb=1',
   isShuckable: true,
@@ -36,7 +36,7 @@ const mockedDrive3: Drive = {
   brand: 'Hitachi',
   createdBy: 'Bleh',
   createdDate: moment(),
-  id: 0,
+  id: 2,
   imageUrl:
     'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.ebayimg.com%2Fimages%2Fi%2F122003598523-0-1%2Fs-l1000.jpg&f=1&nofb=1',
   isShuckable: false,
@@ -45,14 +45,13 @@ const mockedDrive3: Drive = {
   model: 'Ultrastar',
   tutorialUrl: '',
 };
+
 const mockedDrives: Drive[] = [mockedDrive, mockedDrive2, mockedDrive3];
 
 export interface DriveController {
   fetchDrives: () => Drive[];
 }
 
-export class MockDriveController implements DriveController {
-  fetchDrives = (): Drive[] => {
-    return mockedDrives;
-  };
-}
+export const MockDriveController: DriveController = {
+  fetchDrives: (): Drive[] => mockedDrives,
+};

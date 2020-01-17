@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Box } from 'view/component/generic/box-component';
 
 interface Props {
   imageUrl: string;
@@ -24,15 +25,15 @@ export const DriveSummaryComponent: React.FunctionComponent<Props> = ({
     );
 
   return (
-    <Container>
-      <img src={imageUrl} alt={name} />
+    <Box>
+      <DriveImage src={imageUrl} alt={name} />
       {getBrandName(name, isShuckable)}
-    </Container>
+    </Box>
   );
 };
 
-const Container = styled.div`
-  display: flex;
+const DriveImage = styled.img`
+  width: 50px;
 `;
 
 const BrandName = styled.span`
